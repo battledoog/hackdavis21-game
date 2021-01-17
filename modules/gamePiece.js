@@ -11,23 +11,28 @@ class gamePiece{
             }
         })
         
+        this.reachedBottom = false;
         
     }
     
     
     
     moveDown(gameBoard){
-        gameBoard.printBoard()
+        if (this.container.y >= 224){
+            return 
+        }
+//        gameBoard.printBoard()
         for (var i = gameBoard.boardArray.length-1; i > 0; i--){
-            for (var j = 0; j < 10; j++){
-                if (gameBoard.boardArray[i][j] == 'x'){
+            for (var j = 0; j < gameBoard.width; j++){
+                if ((typeof(gameBoard.boardArray[i][j]) == 'string' && gameBoard.boardArray[i][j].includes('x')) || (typeof(gameBoard.boardArray[i][j]) == 'string' && gameBoard.boardArray[i][j].includes('y'))){
 //                    console.log('x found for ' + i + j)
-                    gameBoard.boardArray[i][j] = '0'
-                    gameBoard.boardArray[i+1][j] = 'x';
+                    gameBoard.boardArray[i+1][j] = gameBoard.boardArray[i][j];
+                    gameBoard.boardArray[i][j] = '0';
                 }
             }
         }
         gameBoard.printBoard()
+        return gameBoard
     }
     
     moveRight(){

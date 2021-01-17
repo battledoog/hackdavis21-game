@@ -10,15 +10,16 @@ class gameBoard {
         }
 
         console.log(this.boardArray)
-        
+        this.width = boardWidth
+        this.height = boardHeight
     }
     
     test(){
-            this.boardArray[2][0] = 'x'
-            this.boardArray[2][1] = 'x'
+            this.boardArray[2][0] = 'x1'
+            this.boardArray[2][1] = 'y2'
     
     }
-    
+
     printBoard(){
         for (var i = 0; i < this.boardArray.length; i++){
             var eachRow = ''
