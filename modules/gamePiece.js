@@ -1,5 +1,6 @@
 class gamePiece{
     
+    
     constructor(container){
         this.container = container;
         container.each(function(c){
@@ -11,49 +12,62 @@ class gamePiece{
             }
         })
         
-        this.reachedBottom = false;
+        var w = 224/10
+        var h = 224/10
+        
+        this.leftx = 0
+        this.rightx = 1
+        
+        this.ycoord = 2
         
     }
     
     
     
-    moveDown(gameBoard){
-        if (this.container.y >= 224){
-            return 
-        }
+//    moveDown(gameBoard){
+////        gameBoard.printBoard()
+//        for (var i = gameBoard.boardArray.length-1; i > 0; i--){
+//            for (var j = 0; j < gameBoard.width; j++){
+//                if ((typeof(gameBoard.boardArray[i][j]) == 'string' && gameBoard.boardArray[i][j].includes('x')) || (typeof(gameBoard.boardArray[i][j]) == 'string' && gameBoard.boardArray[i][j].includes('y'))){
+////                  console.log('x found for ' + i + j)
+//                    gameBoard.boardArray[i+1][j] = gameBoard.boardArray[i][j];
+//                    gameBoard.boardArray[i][j] = undefined;
+//                    
+//                }
+//                
+//                
+//            }
+//        }
 //        gameBoard.printBoard()
-        for (var i = gameBoard.boardArray.length-1; i > 0; i--){
-            for (var j = 0; j < gameBoard.width; j++){
-                if ((typeof(gameBoard.boardArray[i][j]) == 'string' && gameBoard.boardArray[i][j].includes('x')) || (typeof(gameBoard.boardArray[i][j]) == 'string' && gameBoard.boardArray[i][j].includes('y'))){
-//                    console.log('x found for ' + i + j)
-                    gameBoard.boardArray[i+1][j] = gameBoard.boardArray[i][j];
-                    gameBoard.boardArray[i][j] = '0';
-                }
-            }
-        }
-        gameBoard.printBoard()
-        return gameBoard
-    }
+//        return gameBoard
+//    }
     
-    moveRight(){
-        
-    }
-    
-    moveLeft(){
-        
-    }
-    
-    rotateCw90(){
-        
-    }
-    
-    rotateCcw90(){
-        
-    }
-    
-    rotate180(){
-        
-    }
+//    
+//    isBottom(ycoord, gameBoard){
+//        
+//        return gameBoard.boardArray[gameBoard.boardArray.length-1].indexOf(ycoord) >= 0
+//    }
+//    
+//    
+//    moveRight(){
+//        
+//    }
+//    
+//    moveLeft(){
+//        
+//    }
+//    
+//    rotateCw90(){
+//        
+//    }
+//    
+//    rotateCcw90(){
+//        
+//    }
+//    
+//    rotate180(){
+//        
+//    }
 }
 
 //export {gamePiece};
